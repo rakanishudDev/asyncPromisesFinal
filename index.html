@@ -6,15 +6,19 @@
   </head>
   <body>
     <script>
-    let timeoutPromise = new Promise((resolve, reject), function() {
-      setTimeot(function() {
-        resolve('Succsess!');
-      }, 2000);
-    });
-    timeoutPromise.then((messeage), function() {
-      alert(messeage);
-    });
-
+    function timeoutPromise(message, interval) {
+      return new Promise((resolve, reject), function() {
+        if (message == '' || typeof message !== 'string') {
+          reject('Message is empty or not a string');
+        } else if (interval < 0 || typeof interval !== 'number') {
+          reject('interval is not a number or is negative')
+        } else {
+          setTimeout(function() {
+            resolve(message);
+          }, interval);
+        }
+      });
+    };
 
     </script>
   </body>
