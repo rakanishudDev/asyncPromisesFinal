@@ -6,18 +6,16 @@
   </head>
   <body>
     <script>
-      // Define custom promise function
+    let timeoutPromise = new Promise((resolve, reject), function() {
+      setTimeot(function() {
+        resolve('Succsess!');
+      }, 2000);
+    });
+    timeoutPromise.then((messeage), function() {
+      alert(messeage);
+    });
 
-      let timeoutPromise = new Promise((resolve, reject) => {
-        setTimeout(() => {
-          resolve('Success!');
-        }, 2000);
-      });
 
-      timeoutPromise
-      .then(message => {
-         alert(message);
-      })
     </script>
   </body>
 </html>
