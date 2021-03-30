@@ -14,9 +14,9 @@
         } else if (interval < 0 || typeof interval !== 'number') {
           reject('interval is not a number or is negative')
         } else {
-          setTimeout(function(){
-        resolve(message);
-      }, interval);
+          setTimeout(function() {
+            resolve(message);
+          }, interval);
         }
       });
     };
