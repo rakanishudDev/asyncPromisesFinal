@@ -21,10 +21,11 @@
       });
     };
 
-    timeoutPromise('Hello world!', 2000).then(function(message) {
+    timeoutPromise('Hello world!', -2000).then(function(message) {
       alert(message);
     }).catch(function(e) {
       console.log('Error:' + e);
+      alert('Error: ' + e);
     });
 
 
