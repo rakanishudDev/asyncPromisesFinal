@@ -14,14 +14,14 @@
         } else if (interval < 0 || typeof interval !== 'number') {
           reject('interval is not a number or is negative')
         } else {
-          setTimeout(function() {
-            resolve(message);
-          }, interval);
+          setTimeout(function(){
+        resolve(message);
+      }, interval);
         }
       });
     };
 
-    timeoutPromise('Hellow world!', 2000).then(function(message) {
+    timeoutPromise('Hello world!', 2000).then(function(message) {
       alert(message);
     }).catch(function(e) {
       console.log('Error:' + e);
